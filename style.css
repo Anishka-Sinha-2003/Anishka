@@ -1,171 +1,111 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin:0;
+    padding:0;
+    font-family: 'Poppins' , sans-serif;
     box-sizing: border-box;
 }
 
-html,
-body{
-    font-family: "Roboto" , sans-serif;
-    font-weight: 300;
-    line-height: 1.4;
-    /* scroll-behavior: smooth; */
-}
-
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-.logo img{
-    width: 150px;
-    height: auto;
-}
-
-.center-nav{
-    display: flex;
-}
-
-.search{
-    display: flex;
-}
-
-.search input{
-    min-width: 600px;
-    padding: 10px 20px;
-    border: 0.5px solid #ccc;
-}
-
-.search button{
-    border: none;
-    padding: 10px 20px;
-}
-
-.mic{
-    padding: 15px;
-    border-radius: 50%;
-    background: #ccc;
-    display: grid;
-    place-items: center;
-    margin-left: 15px;
-}
-
-.mic img{
-    width: 30px;
-}
-
-.side-icon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-right: 50px;
-}
-
-.tags{
-    display: flex;
-    padding: 10px 20px;
-    gap: 15px;
-    border-top: 1px solid #ccc;
-}
-
-.tag{
-    padding: 5px 15px;
-    border-radius: 20px;
-    border: 1px solid rgb(22, 22, 22);
-}
-
-.dark{
-    background: #000;
-    color: white;
-}
-
-.light{
-    background: rgb(238, 238, 238);
-    color: rgb(67, 67, 67);
-}
-
-aside{
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-}
-
 .container{
-    display: flex;
-}
-
-.side-symbols{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.side-symbols img{
-    width: 30px;
-}
-
-.side-symbols p{
-    font-size: 12px;
-    margin-top: -5px;
-}
-
-.bars{
-    margin-top: 20px;
-}
-
-.main-container{
     width: 100%;
-}
-
-main {
     min-height: 100vh;
-    background: rgb(240, 238, 238);
-}
-
-.card-container{
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-}
-
-/* .card-container thumbnail{
-    width: 50%;
-} */
-
-.card{
+    background: linear-gradient(120deg , #8956e9 , #75f8ff);
     padding: 10px;
-    max-width: 320px;
+}
+
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background: #d4caca;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo-app h2{
+    color: #002765;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px;
 }
 
-.avatar-content{
-    padding-top: 10px;
+.row{
     display: flex;
-    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+    background: #eedfee;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
 }
 
-card h3{
-    font-size: 20px;
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
 }
 
-.content{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.channel-name{
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #1b2cca;
+    color: #fff;
     font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
 }
 
-.content-status{
-    display: flex;
-    font-size: 14px;
-    gap: 10px;
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked{
+    color: rgb(101, 16, 150);
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(images/checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right : 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #011308;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%; 
+}
+
+ul li span:hover{
+    background: #4835b6;
 }
