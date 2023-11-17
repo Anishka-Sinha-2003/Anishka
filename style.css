@@ -1,111 +1,173 @@
-*{
-    margin:0;
-    padding:0;
-    font-family: 'Poppins' , sans-serif;
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-}
-
-.container{
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(120deg , #8956e9 , #75f8ff);
-    padding: 10px;
-}
-
-.todo-app{
-    width: 100%;
-    max-width: 540px;
-    background: #d4caca;
-    margin: 100px auto 20px;
-    padding: 40px 30px 70px;
-    border-radius: 10px;
-}
-
-.todo-app h2{
-    color: #002765;
+    font-family: "Poppins", Lalezar, cursive, sans-serif;
+  }
+  
+  body {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-}
-.todo-app h2 img{
-    width: 30px;
-    margin-left: 10px;
-}
-
-.row{
+    justify-content: center;
+    padding: 0 10px;
+    min-height: 100vh;
+    background: #6320ee;
+  }
+  
+  .container {
+    max-width: 700px;
+    width: 100%;
+    padding: 30px;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 36px -5px #b8b8ff;
+  }
+  
+  .wrapper {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .wrapper .text-input {
+    display: block;
+  }
+  
+  .text-input .to-text {
+    border-radius: 0px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .text-input textarea {
+    height: 250px;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    background: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 0.3rem;
+  }
+  
+  .text-input textarea::placeholder {
+    color: #b7b6b6;
+  }
+  
+  .controls,
+  li,
+  .icons,
+  .icons ion-icon {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #eedfee;
-    border-radius: 30px;
-    padding-left: 20px;
-    margin-bottom: 25px;
-}
-
-input{
-    flex: 1;
-    border: none;
-    outline: none;
-    background: transparent;
-    padding: 10px;
-    font-weight: 14px;
-}
-
-button{
-    border: none;
-    outline: none;
-    padding: 16px 50px;
-    background: #1b2cca;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 40px;
-}
-
-ul li{
+  }
+  
+  .controls {
     list-style: none;
-    font-size: 17px;
-    padding: 12px 8px 12px 50px;
-    user-select: none;
+    padding: 12px 15px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .controls .row .icons {
+    width: 38%;
+  }
+  
+  .controls .row .icons ion-icon {
+    width: 50px;
+    color: #adadad;
+    font-size: 1.7rem;
     cursor: pointer;
-    position: relative;
-}
-
-ul li::before{
-    content: '';
-    position: absolute;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    background-image: url(images/unchecked.png);
-    background-size: cover;
-    background-position: center;
-    top: 12px;
-    left: 8px;
-}
-
-ul li.checked{
-    color: rgb(101, 16, 150);
-    text-decoration: line-through;
-}
-
-ul li.checked::before{
-    background-image: url(images/checked.png);
-}
-
-ul li span{
-    position: absolute;
-    right : 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    color: #011308;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%; 
-}
-
-ul li span:hover{
-    background: #4835b6;
-}
+    transition: transform 0.2s ease;
+    justify-content: center;
+  }
+  .controls .row.from .icons {
+    padding-right: 15px;
+    border-right: 1px solid #ccc;
+  }
+  .controls .row.to .icons {
+    padding-left: 15px;
+    border-left: 1px solid #ccc;
+  }
+  .controls .row select {
+    color: #333;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: none;
+    padding-left: 5px;
+  }
+  .text-input textarea::-webkit-scrollbar {
+    width: 4px;
+  }
+  .controls .row select::-webkit-scrollbar {
+    width: 8px;
+  }
+  .text-input textarea::-webkit-scrollbar-track,
+  .controls .row select::-webkit-scrollbar-track {
+    background: #fff;
+  }
+  .text-input textarea::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 8px;
+  }
+  .controls .row select::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 8px;
+    border-right: 2px solid #ffffff;
+  }
+  .controls .exchange {
+    color: #adadad;
+    cursor: pointer;
+    font-size: 1.7rem;
+    transition: transform 0.2s ease;
+  }
+  .controls ion-icon:active {
+    transform: scale(0.9);
+  }
+  .container button {
+    width: 100%;
+    padding: 14px;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+    background: #6320ee;
+  }
+  
+  @media (max-width: 660px) {
+    .container {
+      padding: 20px;
+    }
+    .wrapper .text-input {
+      flex-direction: column;
+    }
+    .text-input .to-text {
+      border-left: 0px;
+      border-top: 1px solid #ccc;
+    }
+    .text-input textarea {
+      height: 200px;
+    }
+    .controls .row .icons {
+      display: inline-flex;
+      flex-direction: column;
+    }
+    .container button {
+      padding: 13px;
+      font-size: 1.2rem;
+    }
+    .controls .row select {
+      font-size: 1.2rem;
+    }
+    .controls .exchange {
+      font-size: 1.2rem;
+    }
+  }
+  @media screen and (max-width: 1250px) {
+    .container {
+      zoom: 0.7;
+    }
+  }
